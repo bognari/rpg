@@ -4,12 +4,12 @@ package de.tubs.cs.ips.rpg.inventary;
  * @author rose
  * @date 15.05.15.
  */
-public class Inventary<T extends Comparable<T>> implements List<T> {
+public class Inventory<T extends Comparable<T>> implements List<T> {
 
-    private Inventary<T> next;
+    private Inventory<T> next;
     private T item;
 
-    public Inventary() {
+    public Inventory() {
         this.next = null;
         this.item = null;
     }
@@ -97,7 +97,7 @@ public class Inventary<T extends Comparable<T>> implements List<T> {
         if (isEmpty())
             return append(x);
         else if (x.compareTo(next.item) < 0) {
-            Inventary<T> inv = new Inventary<>();
+            Inventory<T> inv = new Inventory<>();
             inv.item = x;
             inv.next = next;
             next = inv;
@@ -119,7 +119,7 @@ public class Inventary<T extends Comparable<T>> implements List<T> {
             return this;
 
         if (isEmpty()) {
-            Inventary<T> inv = new Inventary<>();
+            Inventory<T> inv = new Inventory<>();
             inv.item = x;
             inv.next = next;
             next = inv;

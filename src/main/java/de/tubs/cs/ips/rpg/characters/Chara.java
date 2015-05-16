@@ -1,6 +1,6 @@
 package de.tubs.cs.ips.rpg.characters;
 
-import de.tubs.cs.ips.rpg.inventary.Inventary;
+import de.tubs.cs.ips.rpg.inventary.Inventory;
 import de.tubs.cs.ips.rpg.inventary.Item;
 import de.tubs.cs.ips.rpg.inventary.List;
 
@@ -22,7 +22,7 @@ public abstract class Chara {
         this.atk = atk;
         this.hit = hit;
         this.name = name;
-        this.inventary = new Inventary<>();
+        this.inventary = new Inventory<>();
         this.gold = 0;
     }
 

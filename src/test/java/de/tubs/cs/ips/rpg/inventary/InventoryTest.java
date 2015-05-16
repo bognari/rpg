@@ -9,13 +9,13 @@ import static org.junit.Assert.assertEquals;
  * @author rose
  * @date 15.05.15.
  */
-public class InventaryTest {
+public class InventoryTest {
 
     private List<Item> inventary;
 
     @Before
     public void setUp() throws Exception {
-        inventary = new Inventary<>();
+        inventary = new Inventory<>();
     }
 
     @Test
