@@ -47,7 +47,7 @@ public interface List<T> {
      * @param x das Item
      * @return die geanderte Liste
      */
-    List insert(T x);
+    List<T> insert(T x);
 
     /**
      * Fuegt ein Element an das Ende der Liste ein
@@ -55,7 +55,7 @@ public interface List<T> {
      * @param x das Item
      * @return die geanderte Liste
      */
-    List append(T x);
+    List<T> append(T x);
 
     /**
      * Loescht das erste vorkommen des Items x
@@ -63,12 +63,14 @@ public interface List<T> {
      * @param x das Item
      * @return die geanderte Liste
      */
-    List delete(T x);
+    List<T> delete(T x);
 
     /**
      * Loescht das erste Element der Liste
      *
      * @return die geanderte Liste
      */
-    List delete();
+    List<T> delete();
+
+    List<T> clear();
 }

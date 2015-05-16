@@ -18,7 +18,6 @@ import static de.tubs.cs.ips.rpg.dungeons.fields.Field.FieldType;
 
 
 /**
- *
  * @author rose
  */
 public class Level {
@@ -64,11 +63,11 @@ public class Level {
             switch (getOriginalFieldType(currPos)) {
                 case END:
                     Thread.sleep(Timer.ONE_SECOND);
-                    System.out.println("and found finally your goal :)");
+                    System.out.println(" and found finally your goal :)");
                     break;
                 case BATTLE:
                     Thread.sleep(Timer.ONE_SECOND);
-                    System.out.print("where a wild beast awaits you:  ");
+                    System.out.print(" where a wild beast awaits you:  ");
                     final Fight f = new Fight(player, MonsterFactory.create(diff));
                     System.out.println(f.monster());
                     System.out.println("You must defeat it!");
@@ -81,12 +80,12 @@ public class Level {
                     break;
                 case FOUNTAIN:
                     Thread.sleep(Timer.ONE_SECOND);
-                    System.out.println("and found a healing fountain, which heals your wounds :)");
+                    System.out.println(" and found a healing fountain, which heals your wounds :)");
                     player.fullHeal(false);
                     break;
                 case FORGE:
                     Thread.sleep(Timer.ONE_SECOND);
-                    System.out.print("and found a forge, which raises your attack value to ");
+                    System.out.print(" and found a forge, which raises your attack value to ");
                     player.raiseAtk();
                     System.out.println(player.getAtk());
                     break;
@@ -97,6 +96,7 @@ public class Level {
         } else {
             System.out.println("You can't go " + dir.name().toLowerCase() + "! ... ");
             printFreeDirections();
+            Thread.sleep(Timer.ONE_SECOND);
         }
         return false;
     }
@@ -172,8 +172,8 @@ public class Level {
         int pos = string.lastIndexOf(toReplace);
         if (pos > -1) {
             return string.substring(0, pos)
-                + replacement
-                + string.substring(pos + toReplace.length(), string.length());
+                    + replacement
+                    + string.substring(pos + toReplace.length(), string.length());
         } else {
             return string;
         }

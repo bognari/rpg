@@ -32,10 +32,7 @@ public class Item implements Comparable<Item> {
         if (o == null || getClass() != o.getClass()) return false;
 
         Item item = (Item) o;
-
-        if (value != item.value) return false;
-        if (weight != item.weight) return false;
-        return name.equals(item.name);
+        return name.equals(item.name) && value == item.value && weight == item.weight;
 
     }
 

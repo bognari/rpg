@@ -49,7 +49,7 @@ public class Inventory<T extends Comparable<T>> implements List<T> {
 
         if (isEmpty())
             return false;
-        else if (item.equals(x))
+        else if (next.item.equals(x))
             return true;
         return next.isInList(x);
     }
@@ -105,6 +105,13 @@ public class Inventory<T extends Comparable<T>> implements List<T> {
         } else {
             return next.insert(x);
         }
+    }
+
+    @Override
+    public List<T> clear() {
+        next = null;
+        item = null;
+        return this;
     }
 
     /**
