@@ -33,6 +33,13 @@ public abstract class Chara {
                 double zf = Math.random() + 1;
                 int dmg = (int) (atk * zf);
                 other.takeDamage(dmg);
+                if (other.isDefeated()) {
+                    while (!other.getInventary().isEmpty()) {
+                        inventary.insert(other.getInventary().firstItem());
+                        other.getInventary().delete();
+                    }
+                    gold += other.getGold();
+                }
                 return dmg;
             }
         }
